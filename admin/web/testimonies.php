@@ -1,5 +1,14 @@
 <?php
-include_once('header.php')
+include_once('header.php');
+
+if(isset($_GET['id'])){
+    $id= $_GET['id'];
+    if($_GET['status']=='delete'){
+        //? delete user account
+        $sql=$conn->query("DELETE FROM testimonies WHERE tes_id='$id'");
+        // header('Location: testimonies.php'); 
+} }
+ 
 ?>
   <!-- Left side column. contains the logo and sidebar -->
   <?php
@@ -59,25 +68,30 @@ include_once('header.php')
 										</div>
 										</td>
 										<td>
-										<div class="dropdown no-arrow">
-                                        <button class="btn btn-primary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            Actions
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                       <a href="view_company.php?id=<?php echo $row['tes_id'];?>&status=update" class="btn btn-info btn-circle btn-flat">
-                                            <i class="fa fa-edit"></i>
+                                        <a class="btn btn-danger dropdown-toggle" href="javascript:void(0)" data-toggle="modal" data-target="#delTestimonies<?php echo $row ['tes_id']; ?>">
+                                            Delete
                                         </a>
-
-                                        <a href="javascript:void(0)" id="del-warning" data-id="<?php echo $row ['tes_id']?>" class="btn btn-delete btn-danger btn-circle btn-flat" >
+                                        <!-- <a   class="btn btn-danger btn-circle btn-flat" >
                                             <i class="fa fa-trash"></i>
-                                        </a>
-                                        </div>
-                                    </div>
+                                        </a> -->
 										</td>
 									</tr>	
-									
+									<!-- testimonies delete modal -->
+									<div class="modal fade" id="delTestimonies<?php echo $row ['tes_id']; ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+									<div class="modal-dialog modal-md">
+										<div class="modal-content ">
+										
+										<div class="modal-body">
+											<p class="text-center" style="font-size:35px">Are you sure?</p>
+											<p class="text-center">You wont be able to recover file...</p>
+										</div>
+										<div class="modal-footer text-center">
+											<button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancel</button>
+											<a href="testimonies.php?id=<?php echo $row ['tes_id']; ?>&status=delete" type="button" name="delTes" class="btn btn-primary">Yes</a>
+										</div>
+										</div>
+									</div>
+									</div>	
 								</tbody>			  
 								<?php }}else { ?>
 								<tr>

@@ -1,6 +1,6 @@
 <?php
 include 'config.php';
-
+	$mgs="";
     if(isset($_POST['login'])){ 
      $email = cleaninput($_POST['email']);
   
@@ -61,13 +61,16 @@ include 'config.php';
 			<div class="col-12">
 				<div class="row justify-content-center no-gutters">
 					<div class="col-lg-5 col-md-5 col-12">
+						<div class="content-top-agile p-20 pb-3">
+							<span class="dark-logo"><img src="../images/logo-two.png" alt="logo"></span>					
+						</div>
 						<div class="bg-white rounded30 shadow-lg">
-							<div class="content-top-agile p-20 pb-0">
-							<span class="dark-logo"><img src="../images/logo.png" alt="logo"></span>
-								<?php echo isset($_SESSION['mgs'])?$_SESSION['mgs']:""?>						
-							</div>
+		
 							<div class="p-40">
 								<form action="#" method="post">
+								<div class="content-top-agile p-20 pb-3">
+									<?php echo isset($_SESSION['mgs'])?$_SESSION['mgs']:""?>						
+								</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<div class="input-group-prepend">
@@ -94,7 +97,7 @@ include 'config.php';
 										<!-- /.col -->
 										<div class="col-6">
 										 <div class="fog-pwd text-right">
-											<a href="javascript:void(0)" class="hover-warning"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
+											<a href="forgettenpwd.php" class="hover-warning"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
 										  </div>
 										</div>
 										<!-- /.col -->
@@ -115,8 +118,8 @@ include 'config.php';
 		</div>
 	</div>
 <?php
-	if(isset($_SESSION['mges'])){
-		unset($_SESSION['mges']);
+	if(isset($_SESSION['mgs'])){
+		unset($_SESSION['mgs']);
 	}
 ?>
 

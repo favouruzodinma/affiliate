@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -11,10 +11,10 @@
 	<title>HR_LIVE - Register </title>
 
   
-	<!-- Vendors Style-->
+	Vendors Style
 	<link rel="stylesheet" href="css/vendors_css.css">
 	  
-	<!-- Style-->  
+	Style  
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/skin_color.css">	
 
@@ -74,27 +74,25 @@
 											<label for="basic_checkbox_1">I agree to the <a href="#" class="text-warning"><b>Terms</b></a></label>
 										  </div>
 										</div>
-										<!-- /.col -->
+										/.col
 										<div class="col-12 text-center">
 										  <button type="submit" name="register" class="btn btn-info margin-top-10">SIGN IN</button>
 										</div>
-										<!-- /.col -->
+										/.col
 									  </div>
 								</form>				
 								<div class="text-center">
 									<p class="mt-15 mb-0">Already have an account?<a href="login.php" class="text-danger ml-5"> Sign In</a></p>
 								</div>
 							</div>
-						</div>								
-
-						<!-- <div class="text-center">
+						</div><div class="text-center">
 						  <p class="mt-20 text-white">- Register With -</p>
 						  <p class="gap-items-2 mb-20">
 							  <a class="btn btn-social-icon btn-round btn-facebook" href="#"><i class="fa fa-facebook"></i></a>
 							  <a class="btn btn-social-icon btn-round btn-twitter" href="#"><i class="fa fa-twitter"></i></a>
 							  <a class="btn btn-social-icon btn-round btn-instagram" href="#"><i class="fa fa-instagram"></i></a>
 							</p>	
-						</div> -->
+						</div> -
 					</div>
 				</div>
 			</div>			
@@ -102,11 +100,15 @@
 	</div>
 
 
-	<!-- Vendor JS -->
+	Vendor JS
 	<script src="js/vendors.min.js"></script>
 	<script src="js/pages/chat-popup.js"></script>
     <script src="../assets/icons/feather-icons/feather.min.js"></script>	
 	
 	
 </body>
-</html>
+</html> -->
+
+
+<?php 
+require_once ('error_500.html');

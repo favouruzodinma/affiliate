@@ -1,9 +1,16 @@
 <?php
-include_once('header.php')
+include_once('header.php');
+if(isset($_GET['id'])){
+    $id= $_GET['id'];
+    if($_GET['status']=='delete'){
+        //? delete user account
+        $sql=$conn->query("DELETE FROM affiliate_course WHERE course_id='$id'");
+}}
 ?>
   <!-- Left side column. contains the logo and sidebar -->
   <?php
-   include_once('navbar.php') 
+   include_once('navbar.php');
+   
   ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -65,22 +72,79 @@ include_once('header.php')
                                             Actions
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                       <a href="edit_aff_course.php?id=<?php echo $row['course_id'];?>&status=update" class="btn btn-info btn-circle btn-flat">
+                                       <a href="javascript:void(0)"  data-toggle="modal" data-target="#editAffCourse<?php echo $row['course_id'];?>" class="btn btn-info btn-circle btn-flat" >
                                             <i class="fa fa-edit"></i>
                                         </a>
 
-                                        <a href="javascript:void(0)" data-id="<?php echo $row['course_id'];?>" class="btn btn-del btn-danger btn-circle btn-flat" id="del-warning">
+                                        <a href="javascript:void(0)"  data-toggle="modal" data-target="#delaff_Course<?php echo $row ['course_id']; ?>" class="btn btn-danger btn-circle btn-flat">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                         </div>
                                     </div>
 										</td>
 									</tr>	
+									<!-- mange_aff_course delete modal -->
+									<div class="modal fade" id="delaff_Course<?php echo $row ['course_id']; ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered modal-md">
+										<div class="modal-content ">
+										
+										<div class="modal-body">
+											<p class="text-center" style="font-size:35px">Are you sure?</p>
+											<p class="text-center">You wont be able to recover file...</p>
+										</div>
+										<div class="modal-footer text-center">
+											<button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancel</button>
+											<a href="manage_aff_course.php?id=<?php echo $row ['course_id']; ?>&status=delete" type="button" name="delAff" class="btn btn-primary">Yes delete it</a>
+										</div>
+										</div>
+									</div>
+									</div>
+								<!-- edit affiliate course modal -->
+									<div class="modal fade" id="editAffCourse<?php echo $row['course_id'];?>" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered modal-lg">
+									<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="staticBackdropLabel"><h4 class="box-title">Edit Affiliate Course<br>
+												</h4></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<!-- /.box-header -->
+							
+										<div class="box-body">
+										<form method="POST" action="update.php">
+											<div class="form-group">
+													<input type="hidden" value="<?php echo $row['course_id'] ?>">
+														<label class="control-label" for="inputEmail">Edit Affiliate title</label>
+														<input type="hidden" name="course_id" value="<?php echo $row['course_id'] ?>">
+														<input type="text" class="form-control" name="affiliate_title" value="<?php echo $row['affiliate_title'] ?>" required="">
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="inputEmail">Edit Course Price</label>
+														<input type="number" class="form-control"  name="price" value="<?php echo $row['price'] ?>" required="">
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="inputEmail">Edit Course Url</label>
+														<input type="url" class="form-control" name="url" value="<?php echo $row['url'] ?>" required="">
+													</div>
+												<label class="control-label" for="inputEmail">Edit Affiliate Description</label>
+												<textarea class="textarea" id="editor1" name="description" value=""
+														style="width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $row['description'] ?></textarea>
+														<div class="modal-footer">
+												<button type="submit" name="update_aff_course" class="btn btn-primary">Update Course</button>
+											</div>
+										</form>
+									</div>
+									</div>
 									
+									</div>
+									</div>
 								</tbody>			  
 								<?php }}else { ?>
 								<tr>
-									<td colspan='6'>
+								<td colspan='6' class="text-bold">
 										<span style="color:red;"> No result found!!</span>
 									</td>
 								</tr>
@@ -141,6 +205,9 @@ include_once('header.php')
 			</div>
 		</div>
   </div>
+
+  
+
   <!-- Control Sidebar -->
  
 <?php  

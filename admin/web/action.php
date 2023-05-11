@@ -131,7 +131,7 @@ $url=cleaninput($_POST['url']);
     }else{
       if(isset($_POST['register'])){
         $userid = md5(date("shi").rand(203994 , 485789));
-
+        $code = cleaninput(md5(rand()));
         $flname = cleaninput($_POST['flname']);
        
        if(empty($_POST['email'])){
@@ -178,7 +178,7 @@ $url=cleaninput($_POST['url']);
                
                $userid =date("ymdhms"); 
                $password = md5($password);
-               $sql= $conn->query(" INSERT INTO admin SET userid='$userid', flname='$flname', email='$email', password='$password'");
+               $sql= $conn->query(" INSERT INTO admin SET userid='$userid', flname='$flname', email='$email', password='$password', code='$code'");
        
                header('Location:login.php');
        
@@ -197,3 +197,5 @@ $url=cleaninput($_POST['url']);
 }
 }
 ?>
+http://localhost/Affiliate/admin\web\change_password.php?reset=
+http://localhost/Affiliate/admin/web/change_password.php?reset=9c5f2d2e776ab10871a0fb4973626ada

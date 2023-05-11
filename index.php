@@ -14,7 +14,7 @@
 <div class="navbar-area sticky-top">
 
 <div class="mobile-nav">
-<a href="index.html" class="logo">
+<a href="index.php" class="logo">
 <img src="assetss/img/logo-two.png" alt="Logo">
 </a>
 </div>
@@ -22,7 +22,7 @@
 <div class="main-nav">
 <div class="container">
 <nav class="navbar navbar-expand-md navbar-light">
-<a class="navbar-brand" href="index.html">
+<a class="navbar-brand" href="index.php">
 <img src="assetss/img/logo.png" alt="Logo">
 </a>
 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -32,7 +32,7 @@
 <a href="#become an affiliate" class="nav-link dropdown-toggle">Become An Affiliate <i class="icofont-simple-down"></i></a>
 </li>
 <li class="nav-item">
-<a href="#" class="nav-link dropdown-toggle">Earn As a Publisher <i class="icofont-simple-down"></i></a>
+<a href="#become a publisher" class="nav-link dropdown-toggle">Earn As a Publisher <i class="icofont-simple-down"></i></a>
 </li>
 <li class="nav-item">
 <a href="#testimonies" class="nav-link">Testimonies</a>
@@ -132,7 +132,7 @@ Admin
 </div>
 <div class="row">
 <?php
-$sql = $conn->query("SELECT * FROM affiliate_course order by rand()");
+$sql = $conn->query("SELECT * FROM affiliate_course");
 if($sql->num_rows>0){
             $num=1;
 while($row=$sql->fetch_assoc()){ ?>
@@ -156,7 +156,7 @@ while($row=$sql->fetch_assoc()){ ?>
 
  <!-- become a publisher  -->
 
- <section id="become an publisher"  class="dream-area pt-100 pb-70">
+ <section id="become a publisher"  class="dream-area pt-100 pb-70">
 <div class="container">
 <div class="section-title">
 <span class="sub-title">Fulfill our dream</span>
@@ -164,7 +164,7 @@ while($row=$sql->fetch_assoc()){ ?>
 </div>
 <div class="row">
 <?php
-$sql = $conn->query("SELECT * FROM amazon order by rand()");
+$sql = $conn->query("SELECT * FROM amazon");
 if($sql->num_rows>0){
             $num=1;
 while($row=$sql->fetch_assoc()){ ?>

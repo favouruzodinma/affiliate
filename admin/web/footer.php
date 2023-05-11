@@ -4,7 +4,7 @@ if(isset($_SESSION['mgs'])){
 }
 
 ?>
-<footer class="main-footer">
+<footer class="main-footer text-center">
     <div class="pull-right d-none d-sm-inline-block">
         <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
 		  <li class="nav-item">
@@ -15,5 +15,5 @@ if(isset($_SESSION['mgs'])){
 		  </li>
 		</ul>
     </div>
-	  &copy; 2020 <a href="https://www.multipurposethemes.com/">Jobly Company</a>. All Rights Reserved.
+	  &copy;<?php echo date('Y');?> <a href="https://wa.me/+2347041390038/">Findo Affiliate.com</a>. All Rights Reserved.
   </footer>
