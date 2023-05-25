@@ -1,6 +1,5 @@
 <?php
 include 'config.php';
-	$mgs="";
     if(isset($_POST['login'])){ 
      $email = cleaninput($_POST['email']);
   
@@ -20,7 +19,7 @@ include 'config.php';
       }else{
 
        
-        $_SESSION['mgs'] = '
+        $_SESSION['mges'] = '
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Invalid Email or Password submitted!!</strong> 
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -69,7 +68,7 @@ include 'config.php';
 							<div class="p-40">
 								<form action="#" method="post">
 								<div class="content-top-agile p-20 pb-3">
-									<?php echo isset($_SESSION['mgs'])?$_SESSION['mgs']:""?>						
+									<?php echo isset($_SESSION['mges'])?$_SESSION['mges']:""?>						
 								</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
@@ -118,8 +117,8 @@ include 'config.php';
 		</div>
 	</div>
 <?php
-	if(isset($_SESSION['mgs'])){
-		unset($_SESSION['mgs']);
+	if(isset($_SESSION['mges'])){
+		unset($_SESSION['mges']);
 	}
 ?>
 

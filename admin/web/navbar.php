@@ -39,6 +39,12 @@
 			<span>Upload Testimonies</span>
           </a>
         </li>
+        <li>
+          <a href="subadmin.php">
+            <i class="fa  fa-user"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+      <span>Create Sub-Admin</span>
+          </a>
+        </li>
 
         <li>
           <a href="setting.php">
@@ -46,6 +52,7 @@
 			<span>Account Settings</span>
           </a>
         </li>
+
     <li>
           <a href="logout.php">
             <i class="fa fa-sign-out"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>

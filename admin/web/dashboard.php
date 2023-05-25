@@ -15,7 +15,7 @@ include_once('navbar.php');
 							<?php $userid=$_SESSION['userid'];
 							$sql= $conn->query(" SELECT * FROM admin WHERE userid='$userid'");
 							if($sql->num_rows>0){
-								while($row=$sql->fetch_assoc()){?>
+							while($row=$sql->fetch_assoc()){?>
 					  		<h4 class="box-title mb-md-0 mb-20"><span class="text-primary">Welcome</span> <?php echo $row['flname']; ?>&#128526&#128526&#128526</h4>
 							  <p class="mb-0 text-fade pr-10 pt-5"><?php echo "Today is " .  date(" D, d M Y") . "<br>";?>
 								</p>
